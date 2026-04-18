@@ -200,3 +200,13 @@ dist
 
 ### Astro ###
 .astro/
+
+### Playwright ###
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+final_home_light.png
+final_home_dark.png
+final_blog_post.png
+dropdown_open.png
