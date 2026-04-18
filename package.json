@@ -17,8 +17,6 @@
     "@astrojs/react": "^5.0.3",
     "@astrojs/rss": "4.0.14",
     "@astrojs/sitemap": "3.6.1",
-    "@radix-ui/react-dropdown-menu": "^2.1.16",
-    "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
