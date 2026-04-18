@@ -14,7 +14,7 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 	class:list={[
 		className,
 		'inline-block no-underline',
-		{ 'font-bold underline': isActive },
+		{ 'font-bold': isActive },
 	]}
 	{...props}
 >

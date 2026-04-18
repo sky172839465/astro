@@ -3,24 +3,31 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { ModeToggle } from './ModeToggle';
 import { Github } from 'lucide-react';
+import { MobileNav } from './MobileNav';
+import { Button } from './ui/button';
 ---
 
-<header class="m-0 px-4 bg-white dark:bg-slate-900 shadow-md">
-	<nav class="flex items-center justify-between">
-		<h2 class="m-0 text-base">
-			<a href="/" class="no-underline flex items-center gap-2">
-				<img src="/favicon.svg" alt="Logo" width="32" height="32" /> {SITE_TITLE}
-			</a>
-		</h2>
-		<div class="flex">
-			<HeaderLink href="/" class="py-4 px-2 text-black dark:text-white no-underline border-b-4 border-transparent [&.active]:border-blue-600">Home</HeaderLink>
-			<HeaderLink href="/blog" class="py-4 px-2 text-black dark:text-white no-underline border-b-4 border-transparent [&.active]:border-blue-600">Blog</HeaderLink>
-			<HeaderLink href="/about" class="py-4 px-2 text-black dark:text-white no-underline border-b-4 border-transparent [&.active]:border-blue-600">About</HeaderLink>
+<header class="m-0 px-4 py-4 sm:py-6 bg-white dark:bg-slate-900 shadow-md">
+	<nav class="flex items-center justify-between max-w-7xl mx-auto">
+		<div class="flex items-center gap-4">
+			<MobileNav client:load />
+			<h2 class="m-0 text-xl font-bold">
+				<a href="/" class="no-underline flex items-center gap-2 text-black dark:text-white">
+					<img src="/favicon.svg" alt="Logo" width="32" height="32" class="rounded-md dark:bg-foreground p-1" /> {SITE_TITLE}
+				</a>
+			</h2>
 		</div>
-		<div class="hidden sm:flex items-center gap-4">
-			<a href="https://github.com/sky172839465" target="_blank" class="flex text-black dark:text-white">
-				<span class="sr-only">Go to YuSong's GitHub repo</span>
-				<Github size={32} />
+		<div class="hidden sm:flex items-center gap-6">
+			<HeaderLink href="/" class="text-black dark:text-white no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</HeaderLink>
+			<HeaderLink href="/blog" class="text-black dark:text-white no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</HeaderLink>
+			<HeaderLink href="/about" class="text-black dark:text-white no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</HeaderLink>
+		</div>
+		<div class="flex items-center gap-2 sm:gap-4">
+			<a href="https://github.com/sky172839465" target="_blank" class="text-black dark:text-white">
+				<Button variant="ghost" size="icon">
+					<Github className="h-[1.2rem] w-[1.2rem]" />
+					<span class="sr-only">Go to YuSong's GitHub repo</span>
+				</Button>
 			</a>
 			<ModeToggle client:load />
 		</div>

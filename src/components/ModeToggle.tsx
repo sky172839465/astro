@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
+import { useAtom } from "jotai"
+import { themeAtom } from "@/store/theme"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,14 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<
-    "light" | "dark" | "system"
-  >("light")
-
-  React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark")
-    setThemeState(isDarkMode ? "dark" : "light")
-  }, [])
+  const [theme, setTheme] = useAtom(themeAtom)
 
   React.useEffect(() => {
     const isDark =
@@ -37,13 +32,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setThemeState("light")}>
+        <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("dark")}>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("system")}>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
