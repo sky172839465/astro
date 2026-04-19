@@ -5,9 +5,12 @@ import { Share2 } from 'lucide-react';
 interface ShareButtonProps {
   title: string;
   url: string;
+  variant?: "link" | "default" | "destructive" | "outline" | "secondary" | "ghost" | null | undefined;
+  size?: "default" | "sm" | "lg" | "icon" | null | undefined;
+  showText?: boolean;
 }
 
-const ShareButton: React.FC<ShareButtonProps> = ({ title, url }) => {
+const ShareButton: React.FC<ShareButtonProps> = ({ title, url, variant = "outline", size = "sm", showText = true }) => {
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -30,9 +33,10 @@ const ShareButton: React.FC<ShareButtonProps> = ({ title, url }) => {
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={handleShare} className="flex items-center gap-2">
-      <Share2 className="w-4 h-4" />
-      Share
+    <Button variant={variant} size={size} onClick={handleShare} className="flex items-center gap-2">
+      <Share2 className="h-[1.2rem] w-[1.2rem]" />
+      {showText && "Share"}
+      <span className="sr-only">Share this page</span>
     </Button>
   );
 };

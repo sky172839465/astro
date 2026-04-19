@@ -16,9 +16,9 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-background text-foreground transition-colors duration-300">
+	<body class="bg-background text-foreground transition-colors duration-300 flex flex-col min-h-dvh">
 		<Header />
-		<main class="w-full max-w-5xl mx-auto px-4 py-12">
+		<main class="w-full max-w-5xl mx-auto px-4 py-12 flex-grow">
 			<section>
 				<ul class="flex flex-wrap gap-8 list-none m-0 p-0">
 					{
