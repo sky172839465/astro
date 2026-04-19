@@ -3,6 +3,7 @@ title: "簡單認識 PWA"
 description: "認識 PWA 具有哪些功能、用抽象的範例來說明把 PWA 加入既有的網站有什麼好處"
 pubDate: "Mar 09 2025"
 heroImage: "/blog/pwa-intro/x.jpg"
+tags: ["PWA"]
 ---
 
 ### [起源](#come-from)

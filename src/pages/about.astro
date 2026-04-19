@@ -8,51 +8,71 @@ import Layout from '../layouts/BlogPost.astro';
 	pubDate={new Date('May 20 2024')}
 	heroImage="/blog-placeholder-about.jpg"
 >
-	<p>
-		你好，我是 <strong>Yusong (YuSong Hsu)</strong>。作為一名資深前端工程師，我熱衷於解決複雜的技術挑戰，並透過系統化的架構設計與自動化流程來提升開發團隊的生產力。
-	</p>
+	<div class="space-y-8">
+		<section>
+			<p class="text-lg leading-relaxed">
+				你好，我是 <strong class="text-primary">Yusong (YuSong Hsu)</strong>。作為一名資深前端工程師，我熱衷於解決複雜的技術挑戰，並透過系統化的架構設計與自動化流程來提升開發團隊的生產力。
+			</p>
+		</section>
 
-	<h2>技術核心 (Core Expertise)</h2>
-	<p>
-		在多年的前端開發職涯中，我累積了豐富的實戰經驗，涵蓋從基礎設施到高端應用的完整技術棧：
-	</p>
-	<ul>
-		<li>
-			<strong>Progressive Web App (PWA) & Notifications</strong>：
-			致力於打造原生級別的 Web 體驗，深入掌握 Service Worker、離線緩存策略以及推送通知技術。
-		</li>
-		<li>
-			<strong>Playwright 自動化測試專家</strong>：
-			我不僅僅是撰寫測試指令碼，更專注於提升測試架構的「可調試性」與「效率」。
-			曾設計並實現將測試日誌轉換為直觀 HTML 報表的系統，大幅優化了平行測試時的 Debug 流程。
-		</li>
-		<li>
-			<strong>視覺回歸測試 (Visual Regression Testing)</strong>：
-			開發自定義的視覺對比工作流，確保 UI 在快速迭代中保持一致性，減少人工審核成本。
-		</li>
-		<li>
-			<strong>CI/CD 架構設計</strong>：
-			擅長從零建構或優化現有的 CI/CD 流水線，整合自動化測試與代碼質量檢查，實現真正的高頻、低風險發佈。
-		</li>
-	</ul>
+		<section class="bg-muted/30 p-6 rounded-2xl border border-muted">
+			<h2 class="mt-0 text-2xl font-bold mb-4 flex items-center gap-2">
+				<span class="text-primary text-3xl">🎯</span> 技術核心 (Core Expertise)
+			</h2>
+			<div class="grid gap-6">
+				<div class="space-y-2">
+					<h3 class="text-xl font-semibold m-0">Progressive Web App (PWA) & Notifications</h3>
+					<p class="m-0 text-muted-foreground">致力於打造原生級別的 Web 體驗，深入掌握 Service Worker、離線緩存策略以及推送通知技術。</p>
+				</div>
+				<div class="space-y-2">
+					<h3 class="text-xl font-semibold m-0">Playwright 自動化測試專家</h3>
+					<p class="m-0 text-muted-foreground">我不僅僅是撰寫測試指令碼，更專注於提升測試架構的「可調試性」與「效率」。曾設計並實現將測試日誌轉換為直觀 HTML 報表的系統，大幅優化了平行測試時的 Debug 流程。</p>
+				</div>
+				<div class="space-y-2">
+					<h3 class="text-xl font-semibold m-0">視覺回歸測試 (Visual Regression Testing)</h3>
+					<p class="m-0 text-muted-foreground">開發自定義的視覺對比工作流，確保 UI 在快速迭代中保持一致性，減少人工審核成本。</p>
+				</div>
+				<div class="space-y-2">
+					<h3 class="text-xl font-semibold m-0">CI/CD 架構設計</h3>
+					<p class="m-0 text-muted-foreground">擅長從零建構或優化現有的 CI/CD 流水線，整合自動化測試與代碼質量檢查，實現真正的高頻、低風險發佈。</p>
+				</div>
+			</div>
+		</section>
 
-	<h2>邁向 AI 時代的架構思維</h2>
-	<p>
-		隨著 AI 輔助開發的普及，我開始專注於設計 <strong>AI 友善的前端架構 (AI-friendly Frontend Architecture)</strong>。這不僅僅是為了讓代碼更易讀，更是為了：
-	</p>
-	<ul>
-		<li><strong>結構化內容表達</strong>：讓 AI 代理能更精準地理解組件間的邏輯與 workflow。</li>
-		<li><strong>卓越的 DX (Developer Experience)</strong>：透過嚴謹的型別定義與模組化設計，讓開發者與 AI 協作時能獲得更高質量的補全與建議。</li>
-	</ul>
+		<section>
+			<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+				<span class="text-primary text-3xl">🤖</span> 邁向 AI 時代的架構思維
+			</h2>
+			<p>
+				隨著 AI 輔助開發的普及，我開始專注於設計 <strong>AI 友善的前端架構 (AI-friendly Frontend Architecture)</strong>。這不僅僅是為了讓代碼更易讀，更是為了：
+			</p>
+			<ul class="list-none p-0 space-y-4">
+				<li class="flex gap-3">
+					<span class="text-primary font-bold">✓</span>
+					<span><strong>結構化內容表達</strong>：讓 AI 代理能更精準地理解組件間的邏輯與 workflow。</span>
+				</li>
+				<li class="flex gap-3">
+					<span class="text-primary font-bold">✓</span>
+					<span><strong>卓越的 DX (Developer Experience)</strong>：透過嚴謹的型別定義與模組化設計，讓開發者與 AI 協作時能獲得更高質量的補全與建議。</span>
+				</li>
+			</ul>
+		</section>
 
-	<h2>專案亮點</h2>
-	<p>
-		我曾在多個專案中擔任核心技術決策者，從 yusong.io 的個人品牌建構，到複雜的企業級應用架構設計。
-		我深信技術的價值在於解決問題，而高品質的代碼與自動化則是達成此目標的最佳路徑。
-	</p>
+		<section>
+			<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+				<span class="text-primary text-3xl">✨</span> 專案亮點
+			</h2>
+			<p>
+				我曾在多個專案中擔任核心技術決策者，從 yusong.io 的個人品牌建構，到複雜的企業級應用架構設計。
+				我深信技術的價值在於解決問題，而高品質的代碼與自動化則是達成此目標的最佳路徑。
+			</p>
+		</section>
 
-	<p>
-		如果你對自動化測試、前端架構優化、或者 AI 在前端領域的應用有興趣，歡迎透過
-		<a href="https://github.com/sky172839465" target="_blank">GitHub</a> 與我交流。
-	</p>
+		<footer class="pt-8 border-t border-muted">
+			<p class="text-center italic text-muted-foreground">
+				如果你對自動化測試、前端架構優化、或者 AI 在前端領域的應用有興趣，歡迎透過
+				<a href="https://github.com/sky172839465" target="_blank" class="text-primary hover:underline underline-offset-4">GitHub</a> 與我交流。
+			</p>
+		</footer>
+	</div>
 </Layout>

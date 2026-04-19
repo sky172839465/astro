@@ -3,6 +3,7 @@ title: "2025 JP 旅行前紀錄"
 description: "2025 日本大阪行紀錄地點、行程的筆記"
 pubDate: "Oct 25 2025"
 heroImage: "/blog/jp2025-note/x.jpg"
+tags: ["TRAVEL", "JAPAN", "NOTE"]
 ---
 
 ### [主要地點](#main-map)

@@ -3,6 +3,7 @@ title: "Web Manifest 介紹"
 description: "設定 Web Manifest 可以描繪出安裝 Web App 所需要的資訊與外觀"
 pubDate: "Mar 09 2025"
 heroImage: "/blog/web-app-manifest/x.jpg"
+tags: ["PWA", "WEB MANIFEST"]
 ---
 
 ### [介紹](#intro)
