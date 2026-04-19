@@ -54,14 +54,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], headings
 						</div>
 						<h1 class="mb-2">{title}</h1>
 						{headings.length > 0 && (
-							<nav class="mt-8 text-left self-stretch bg-muted/30 py-4 rounded-lg">
-								<p class="text-sm font-bold mb-2 uppercase tracking-wider px-4">Table of Contents</p>
+							<nav class="mt-8 text-left self-stretch bg-muted/30 py-4 rounded-lg not-prose">
+								<p class="text-sm font-bold mb-2 uppercase tracking-wider px-4 mb-2">Table of Contents</p>
 								<ul class="space-y-1 text-sm list-none p-0 m-0">
 									{headings.filter(h => h.depth <= 3).map((heading, index) => (
-										<li style={`margin-left: ${(heading.depth - 2) * 1}rem`} class="px-0">
+										<li class="px-0 m-0">
 											<a
 												href={`#${heading.slug}`}
 												class="text-muted-foreground hover:text-foreground transition-colors no-underline block px-4 py-1"
+												style={`padding-left: ${1 + (heading.depth - 2) * 1.5}rem`}
 											>
 												{index + 1}. {heading.text}
 											</a>
