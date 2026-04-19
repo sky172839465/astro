@@ -13,37 +13,51 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class="bg-background text-foreground transition-colors duration-300">
 		<Header />
 		<main class="prose prose-slate dark:prose-invert lg:prose-xl mx-auto px-4 py-12">
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="space-y-6">
+				<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+					Senior Frontend Engineer & Testing Automation Specialist
+				</h1>
+				<p class="text-lg text-muted-foreground leading-relaxed">
+					我是 Yusong，一名專注於高效能、可擴展性及自動化測試的資深前端工程師。我致力於透過卓越的架構設計與自動化流程，打造極致的開發體驗與穩定可靠的 Web 應用。
+				</p>
+			</section>
+
+			<section class="mt-12 space-y-8">
+				<div>
+					<h2 class="text-2xl font-bold border-b pb-2">核心專長</h2>
+					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0 mt-4">
+						<li class="flex items-start gap-2">
+							<span class="text-blue-500 font-bold">✓</span>
+							<span><strong>現代化前端架構</strong>：精通 React 與 TypeScript，設計兼具靈活性與可維護性的系統。</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-blue-500 font-bold">✓</span>
+							<span><strong>自動化測試深度整合</strong>：深耕 Playwright 與視覺回歸測試，優化平行測試效率與報表可讀性。</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-blue-500 font-bold">✓</span>
+							<span><strong>CI/CD 流程優化</strong>：設計高效、穩定的開發與部署流水線。</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-blue-500 font-bold">✓</span>
+							<span><strong>AI 友善架構</strong>：構建易於 AI 理解與協作的代碼結構，提升開發效率 (DX)。</span>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h2 class="text-2xl font-bold border-b pb-2">近期關注</h2>
+					<p>
+						目前我正致力於將 Progressive Web App (PWA) 與 Push Notifications 技術發揮到極致，並持續探索如何透過 AI 驅動的工具來重塑前端開發工作流。
+					</p>
+				</div>
+			</section>
+
+			<section class="mt-12 text-center sm:text-left">
+				<p class="italic text-muted-foreground">
+					"追求卓越不只是目標，而是一種持續優化的開發習慣。"
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>

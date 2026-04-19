@@ -7,13 +7,14 @@ import { MobileNav } from './MobileNav';
 import { Button } from './ui/button';
 ---
 
-<header class="m-0 px-4 py-4 sm:py-6 bg-background shadow-md border-b">
+<header class="m-0 px-4 py-4 sm:py-6 bg-background shadow-md border-b sticky top-0 z-50 transition-all duration-300">
 	<nav class="flex items-center justify-between max-w-7xl mx-auto">
 		<div class="flex items-center gap-4">
 			<MobileNav client:load />
-			<h2 class="m-0 text-xl font-bold">
-				<a href="/" class="no-underline flex items-center gap-2 text-black dark:text-white">
-					<img src="/favicon.svg" alt="Logo" width="32" height="32" class="rounded-md dark:bg-foreground p-1" /> {SITE_TITLE}
+			<h2 class="m-0 text-xl font-bold flex items-center">
+				<a href="/" class="no-underline flex items-center gap-2 text-black dark:text-white leading-none">
+					<img src="/favicon.svg" alt="Logo" width="32" height="32" class="rounded-md dark:bg-foreground p-1" />
+					<span class="flex items-center h-full self-center translate-y-[1px]">{SITE_TITLE}</span>
 				</a>
 			</h2>
 		</div>
