@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Button } from '../components/ui/button';
+import { ArrowLeft, FileQuestion } from 'lucide-react';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
+---
+
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<BaseHead title={`404 - Page Not Found | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-background text-foreground transition-colors duration-300 flex flex-col min-h-dvh">
+		<Header />
+		<main class="flex-grow flex flex-col items-center justify-center px-4 py-12">
+			<div class="max-w-2xl w-full text-center space-y-8">
+				<div class="flex justify-center">
+					<div class="p-6 bg-muted/50 rounded-full">
+						<FileQuestion className="size-16 text-muted-foreground" />
+					</div>
+				</div>
+
+				<div class="space-y-4">
+					<h1 class="text-6xl font-extrabold tracking-tighter">404</h1>
+					<h2 class="text-3xl font-bold">Page Not Found</h2>
+					<p class="text-muted-foreground text-lg">
+						Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
+					</p>
+				</div>
+
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<a href="/">
+						<Button variant="default" size="lg" className="gap-2">
+							<ArrowLeft className="size-4" />
+							Back to Home
+						</Button>
+					</a>
+				</div>
+
+				{posts.length > 0 && (
+					<div class="pt-12 border-t border-border w-full">
+						<h3 class="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-6">
+							Latest Blog Posts
+						</h3>
+						<div class="grid gap-4 text-left">
+							{posts.map((post) => (
+								<a
+									href={`/blog/${post.id}/`}
+									class="group p-4 rounded-xl border border-border bg-muted/30 hover:bg-muted/50 transition-colors"
+								>
+									<div class="flex flex-col gap-1">
+										<span class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">
+											{post.data.title}
+										</span>
+										<span class="text-sm text-muted-foreground line-clamp-1">
+											{post.data.description}
+										</span>
+									</div>
+								</a>
+							))}
+						</div>
+					</div>
+				)}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
