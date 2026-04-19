@@ -20,9 +20,9 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], headings
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class="bg-background text-foreground transition-colors duration-300">
+	<body class="bg-background text-foreground transition-colors duration-300 flex flex-col min-h-dvh">
 		<Header />
-		<main class="w-full max-w-4xl mx-auto px-4 py-12">
+		<main class="w-full max-w-4xl mx-auto px-4 py-12 flex-grow">
 			<article>
 				<div class="w-full mb-8">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" class="block mx-auto rounded-xl shadow-lg" />}
@@ -54,16 +54,17 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], headings
 						</div>
 						<h1 class="mb-2">{title}</h1>
 						{headings.length > 0 && (
-							<nav class="mt-8 text-left self-stretch bg-muted/30 p-4 rounded-lg">
-								<p class="text-sm font-bold mb-2 uppercase tracking-wider">Table of Contents</p>
+							<nav class="mt-8 text-left self-stretch bg-muted/30 py-4 rounded-lg not-prose">
+								<p class="text-sm font-bold mb-2 uppercase tracking-wider px-4 mb-2">Table of Contents</p>
 								<ul class="space-y-1 text-sm list-none p-0 m-0">
-									{headings.filter(h => h.depth <= 3).map((heading) => (
-										<li style={`margin-left: ${(heading.depth - 2) * 1}rem`}>
+									{headings.filter(h => h.depth <= 3).map((heading, index) => (
+										<li class="px-0 m-0">
 											<a
 												href={`#${heading.slug}`}
-												class="text-muted-foreground hover:text-foreground transition-colors no-underline"
+												class="text-muted-foreground hover:text-foreground transition-colors no-underline block px-4 py-1"
+												style={`padding-left: ${1 + (heading.depth - 2) * 1.5}rem`}
 											>
-												{heading.text}
+												{index + 1}. {heading.text}
 											</a>
 										</li>
 									))}

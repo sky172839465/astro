@@ -4,73 +4,56 @@ import Layout from '../layouts/BlogPost.astro';
 
 <Layout
 	title="關於我 (About Me)"
-	description="資深前端工程師，專注於自動化測試、架構設計與開發體驗優化。"
+	description="資深前端工程師，專注於自動化測試、架構設計與開發體驗最佳化。"
 	pubDate={new Date('May 20 2024')}
 	heroImage="/blog-placeholder-about.jpg"
 >
 	<div class="space-y-8">
 		<section>
 			<p class="text-lg leading-relaxed">
-				你好，我是 <strong class="text-primary">Yusong (YuSong Hsu)</strong>。作為一名資深前端工程師，我熱衷於解決複雜的技術挑戰，並透過系統化的架構設計與自動化流程來提升開發團隊的生產力。
+				我是 <strong class="text-primary">Yusong (YuSong Hsu)</strong>。目前在前端領域打滾，我花很多時間研究怎麼讓測試變簡單、流程變順暢。
 			</p>
 		</section>
 
 		<section class="bg-muted/30 p-6 rounded-2xl border border-muted">
 			<h2 class="mt-0 text-2xl font-bold mb-4 flex items-center gap-2">
-				<span class="text-primary text-3xl">🎯</span> 技術核心 (Core Expertise)
+				<span class="text-primary text-3xl">🎯</span> 我擅長的事
 			</h2>
 			<div class="grid gap-6">
 				<div class="space-y-2">
-					<h3 class="text-xl font-semibold m-0">Progressive Web App (PWA) & Notifications</h3>
-					<p class="m-0 text-muted-foreground">致力於打造原生級別的 Web 體驗，深入掌握 Service Worker、離線緩存策略以及推送通知技術。</p>
+					<h3 class="text-xl font-semibold m-0">PWA 與通知推播</h3>
+					<p class="m-0 text-muted-foreground">處理過不少 Service Worker 和離線快取，目標是讓 Web 跑起來像原生 App 一樣順。</p>
 				</div>
 				<div class="space-y-2">
-					<h3 class="text-xl font-semibold m-0">Playwright 自動化測試專家</h3>
-					<p class="m-0 text-muted-foreground">我不僅僅是撰寫測試指令碼，更專注於提升測試架構的「可調試性」與「效率」。曾設計並實現將測試日誌轉換為直觀 HTML 報表的系統，大幅優化了平行測試時的 Debug 流程。</p>
+					<h3 class="text-xl font-semibold m-0">自動化測試與 Playwright</h3>
+					<p class="m-0 text-muted-foreground">我不只是寫寫測試案例。我更在意測試好不好修、跑得夠不夠快。我曾把雜亂的測試日誌轉成漂亮的 HTML 報表，讓除錯不再是惡夢。</p>
 				</div>
 				<div class="space-y-2">
-					<h3 class="text-xl font-semibold m-0">視覺回歸測試 (Visual Regression Testing)</h3>
-					<p class="m-0 text-muted-foreground">開發自定義的視覺對比工作流，確保 UI 在快速迭代中保持一致性，減少人工審核成本。</p>
+					<h3 class="text-xl font-semibold m-0">視覺回歸測試</h3>
+					<p class="m-0 text-muted-foreground">寫了一套工作流來自動檢查 UI 有沒有跑版。改程式碼的時候更有信心，不用每次都用肉眼檢查。</p>
 				</div>
 				<div class="space-y-2">
-					<h3 class="text-xl font-semibold m-0">CI/CD 架構設計</h3>
-					<p class="m-0 text-muted-foreground">擅長從零建構或優化現有的 CI/CD 流水線，整合自動化測試與代碼質量檢查，實現真正的高頻、低風險發佈。</p>
+					<h3 class="text-xl font-semibold m-0">CI/CD 流程設計</h3>
+					<p class="m-0 text-muted-foreground">從無到有建立自動化發佈流程，把測試和程式碼品質檢查通通塞進去。</p>
 				</div>
 			</div>
 		</section>
 
 		<section>
 			<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-				<span class="text-primary text-3xl">🤖</span> 邁向 AI 時代的架構思維
+				<span class="text-primary text-3xl">🤖</span> AI 時代的前端架構
 			</h2>
 			<p>
-				隨著 AI 輔助開發的普及，我開始專注於設計 <strong>AI 友善的前端架構 (AI-friendly Frontend Architecture)</strong>。這不僅僅是為了讓代碼更易讀，更是為了：
+				現在 AI 寫程式越來越強，我也開始在想怎麼讓架構對 AI 更友善。這不只是為了易讀，而是要讓 AI 更容易看懂元件之間的邏輯，減少出錯的機率。
 			</p>
-			<ul class="list-none p-0 space-y-4">
-				<li class="flex gap-3">
-					<span class="text-primary font-bold">✓</span>
-					<span><strong>結構化內容表達</strong>：讓 AI 代理能更精準地理解組件間的邏輯與 workflow。</span>
-				</li>
-				<li class="flex gap-3">
-					<span class="text-primary font-bold">✓</span>
-					<span><strong>卓越的 DX (Developer Experience)</strong>：透過嚴謹的型別定義與模組化設計，讓開發者與 AI 協作時能獲得更高質量的補全與建議。</span>
-				</li>
-			</ul>
-		</section>
-
-		<section>
-			<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-				<span class="text-primary text-3xl">✨</span> 專案亮點
-			</h2>
 			<p>
-				我曾在多個專案中擔任核心技術決策者，從 yusong.io 的個人品牌建構，到複雜的企業級應用架構設計。
-				我深信技術的價值在於解決問題，而高品質的代碼與自動化則是達成此目標的最佳路徑。
+				高品質的程式碼和自動化不該是拿來炫技的，這樣做是為了讓大家把時間花在真正重要的事情上。
 			</p>
 		</section>
 
 		<footer class="pt-8 border-t border-muted">
 			<p class="text-center italic text-muted-foreground">
-				如果你對自動化測試、前端架構優化、或者 AI 在前端領域的應用有興趣，歡迎透過
+				如果你也對自動化測試或前端架構有興趣，歡迎透過
 				<a href="https://github.com/sky172839465" target="_blank" class="text-primary hover:underline underline-offset-4">GitHub</a> 與我交流。
 			</p>
 		</footer>
