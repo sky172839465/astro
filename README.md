@@ -8,7 +8,7 @@
 
 ### 如何開始寫作
 文章檔案存放在 `src/content/blog/` 目錄下。
-- **快速建立文章**：可以使用 GitHub 的 **Actions** 頁面，選擇 `Create New Blog Post` 工作流並點擊 `Run workflow` 手動輸入文章資訊，系統會自動建立檔案並發起 Pull Request。
+- **快速建立文章**：可以使用 GitHub 的 **Actions** 頁面，選擇 [Create New Blog Post](https://github.com/sky172839465/astro.yusong.dev/actions/workflows/new-post.yml) 工作流並點擊 `Run workflow` 手動輸入文章資訊，系統會自動建立檔案並發起 Pull Request。
 - **命名規範**：檔案名稱請使用 `kebab-case`（例如：`my-first-post.md`）。
 - **圖片管理**：靜態資產（如首圖與文章內圖）請存放在 `public/blog/[slug]/` 目錄下（若有子資料夾則對應路徑，例如 `public/blog/pwa/my-post/`），並在 Markdown 中使用以 `/blog/` 開頭的絕對路徑引用。
 
