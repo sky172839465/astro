@@ -3,14 +3,14 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, IGNORE_SERIES } from '../../consts';
 
 const posts = await getCollection('blog');
 const seriesMap = new Map();
 
 posts.forEach((post) => {
 	const segments = post.id.split('/');
-	if (segments.length > 1) {
+	if (segments.length > 1 && !IGNORE_SERIES.includes(segments[0])) {
 		const seriesId = segments[0];
 		if (!seriesMap.has(seriesId)) {
 			seriesMap.set(seriesId, {
