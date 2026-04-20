@@ -83,7 +83,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], headings
 
 					{series && <Series {...series} />}
 
-					<div class="mt-12 pt-8 border-t border-muted flex justify-center">
+					<div class="mt-12 flex justify-center">
 						<ShareButton client:load title={title} url={Astro.url.toString()} />
 					</div>
 
