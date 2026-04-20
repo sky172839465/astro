@@ -1,0 +1,108 @@
+name: Create New Blog Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Post Title'
+        required: true
+      description:
+        description: 'Post Description'
+        required: true
+      tags:
+        description: 'Tags (comma separated)'
+        required: false
+      series:
+        description: 'Series (optional, e.g., pwa)'
+        required: false
+      filename:
+        description: 'Filename (kebab-case, e.g., my-post)'
+        required: true
+        default: 'my-post'
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate Post Content
+        env:
+          TITLE: ${{ github.event.inputs.title }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+          TAGS: ${{ github.event.inputs.tags }}
+          SERIES: ${{ github.event.inputs.series }}
+          FILENAME: ${{ github.event.inputs.filename }}
+        run: |
+          # Date in MMM DD YYYY format
+          PUB_DATE=$(LC_TIME=C date +"%b %d %Y")
+
+          # Determine path and slug
+          if [ -n "$SERIES" ]; then
+            DIR="src/content/blog/$SERIES"
+            SLUG="$SERIES/$FILENAME"
+          else
+            DIR="src/content/blog"
+            SLUG="$FILENAME"
+          fi
+
+          mkdir -p "$DIR"
+          FILE_PATH="$DIR/$FILENAME.md"
+
+          # Format tags as JSON array
+          if [ -z "$TAGS" ]; then
+            TAGS_FORMATTED="[]"
+          else
+            # Split by comma and format each tag
+            TAGS_FORMATTED=$(echo "$TAGS" | sed 's/ *, */","/g' | sed 's/^/["/' | sed 's/$/"]/')
+          fi
+
+          HERO_IMAGE="/blog/$SLUG/image.jpg"
+
+          # Use block scalars for title and description to safely handle quotes and special characters
+          cat <<EOF > "$FILE_PATH"
+---
+title: |-
+$(echo "$TITLE" | sed 's/^/  /')
+description: |-
+$(echo "$DESCRIPTION" | sed 's/^/  /')
+pubDate: "$PUB_DATE"
+heroImage: "$HERO_IMAGE"
+tags: $TAGS_FORMATTED
+---
+
+Hello world
+EOF
+
+          echo "FILE_PATH=$FILE_PATH" >> $GITHUB_ENV
+          echo "SLUG=$SLUG" >> $GITHUB_ENV
+          echo "SERIES_FOLDER=$SERIES" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat: add new blog post ${{ github.event.inputs.title }}"
+          branch: "blog/${{ github.event.inputs.filename }}"
+          title: "[自動產生] 新文章: ${{ github.event.inputs.title }}"
+          body: |
+            這是一個透過 GitHub Action 自動產生的 Pull Request。
+
+            ### 文章資訊
+            - **標題**: ${{ github.event.inputs.title }}
+            - **路徑**: ${{ env.SLUG }}
+            - **系列**: ${{ env.SERIES_FOLDER || '無' }}
+
+            ### 確認清單
+            - [ ] 確認檔案名稱符合 kebab-case 命名規範
+            - [ ] 確認首圖（heroImage）已上傳至 `public/blog/${{ env.SLUG }}/`
+            - [ ] 檢查標籤是否正確
+
+            ### 注意事項
+            - 別忘了手動上傳首圖檔案！
+            - 如果這是新系列，請確認系列頁面顯示是否正常。
+          delete-branch: true
