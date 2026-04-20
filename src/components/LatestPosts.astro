@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+	limit?: number;
+	title?: string;
+	className?: string;
+}
+
+const { limit = 3, title = "Latest Blog Posts", className = "" } = Astro.props;
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, limit);
+---
+
+{posts.length > 0 && (
+	<div class={`pt-12 border-t border-border w-full ${className}`}>
+		<h3 class="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-6">
+			{title}
+		</h3>
+		<div class="grid gap-4 text-left">
+			{posts.map((post) => (
+				<a
+					href={`/blog/${post.id}/`}
+					class="group p-4 rounded-xl border border-border bg-muted/30 hover:bg-muted/50 transition-colors"
+				>
+					<div class="flex flex-col gap-1">
+						<span class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-1 text-foreground">
+							{post.data.title}
+						</span>
+						<span class="text-sm text-muted-foreground line-clamp-1">
+							{post.data.description}
+						</span>
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+)}

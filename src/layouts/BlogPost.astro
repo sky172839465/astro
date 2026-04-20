@@ -7,12 +7,18 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { Badge } from '../components/ui/badge';
 import ShareButton from '../components/ShareButton';
+import Series from '../components/Series.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
 	headings?: MarkdownHeading[];
+	series?: {
+		id: string;
+		posts: CollectionEntry<'blog'>[];
+		currentId: string;
+	};
 };
 
-const { title, description, pubDate, updatedDate, heroImage, tags = [], headings = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags = [], headings = [], series } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -73,6 +79,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], headings
 						)}
 					</div>
 					<slot />
+
+					{series && <Series {...series} />}
 
 					<div class="mt-12 pt-8 border-t border-muted flex justify-center">
 						<ShareButton client:load title={title} url={Astro.url.toString()} />

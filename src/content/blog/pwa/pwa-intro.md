@@ -2,7 +2,7 @@
 title: "簡單認識 PWA"
 description: "認識 PWA 具有哪些功能、用抽象的範例來說明把 PWA 加入既有的網站有什麼好處"
 pubDate: "Mar 09 2025"
-heroImage: "/blog/pwa-intro/x.jpg"
+heroImage: "/blog/pwa/pwa-intro/x.jpg"
 tags: ["PWA"]
 ---
 
@@ -60,7 +60,7 @@ PWA，全名 `Progressive Web App` 意為「漸進式網頁應用程式」。
 
 ### [範例](#example)
 
-PWA 系列都會使用這個 [PWA sharing](https://pwa-sharing.pages.dev/) 網站做解說，如果想要研究實作內容可以看 [這一篇文章](/blog/pwa-example/)，GitHub 程式碼的位置也列在裡面。
+PWA 系列都會使用這個 [PWA sharing](https://pwa-sharing.pages.dev/) 網站做解說，如果想要研究實作內容可以看 [這一篇文章](/blog/pwa/pwa-example/)，GitHub 程式碼的位置也列在裡面。
 
 ### [結論](#conclusion)
 

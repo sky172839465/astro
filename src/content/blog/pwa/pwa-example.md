@@ -2,7 +2,7 @@
 title: "PWA 範例解說"
 description: "PWA 系列有另外做了範例網站，這篇主要講解這個網站的結構"
 pubDate: "Feb 24 2025"
-heroImage: "/blog/pwa-example/x.jpg"
+heroImage: "/blog/pwa/pwa-example/x.jpg"
 tags: ["PWA", "EXAMPLE"]
 ---
 

@@ -1,0 +1,68 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { cn } from '@/lib/utils';
+
+interface Props {
+	id: string;
+	posts: CollectionEntry<'blog'>[];
+	currentId: string;
+	className?: string;
+}
+
+const { id, posts, currentId, className } = Astro.props;
+
+// Uppercase series name for display
+const seriesName = id.toUpperCase();
+---
+
+<div class={cn("not-prose my-12 rounded-xl border border-muted bg-muted/20 overflow-hidden", className)}>
+	<div class="px-4 py-3 border-b border-muted bg-muted/30 flex items-center justify-between">
+		<a href={`/blog/${id}/`} class="flex items-center gap-2 group/title">
+			<span class="flex h-2 w-2 rounded-full bg-primary group-hover/title:scale-125 transition-transform"></span>
+			<h3 class="text-sm font-bold tracking-wider uppercase text-foreground group-hover/title:text-primary transition-colors">
+				{seriesName} 系列文章
+			</h3>
+		</a>
+		<span class="text-xs text-muted-foreground font-medium">
+			{posts.findIndex(p => p.id === currentId) + 1} / {posts.length}
+		</span>
+	</div>
+	<ul class="divide-y divide-muted/50 list-none p-0 m-0">
+		{posts.map((post, index) => {
+			const isCurrent = post.id === currentId;
+			return (
+				<li class="p-0 m-0">
+					<a
+						href={`/blog/${post.id}/`}
+						class={cn(
+							"group flex items-start gap-3 px-4 py-3 transition-colors",
+							isCurrent
+								? "bg-primary/5 pointer-events-none"
+								: "hover:bg-muted/50"
+						)}
+					>
+						<span class={cn(
+							"mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold border transition-colors",
+							isCurrent
+								? "bg-primary border-primary text-primary-foreground"
+								: "border-muted-foreground/30 text-muted-foreground group-hover:border-primary group-hover:text-primary"
+						)}>
+							{index + 1}
+						</span>
+						<span class={cn(
+							"text-sm font-medium transition-colors",
+							isCurrent ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+						)}>
+							{post.data.title}
+						</span>
+						{isCurrent && (
+							<span class="ml-auto text-[10px] font-bold uppercase tracking-widest text-primary">
+								閱讀中
+							</span>
+						)}
+					</a>
+				</li>
+			);
+		})}
+	</ul>
+</div>

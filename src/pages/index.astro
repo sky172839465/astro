@@ -6,6 +6,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import LatestPosts from '../components/LatestPosts.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const diaryEntry = await getEntry('home', 'diary');
@@ -46,6 +47,8 @@ const lastUpdated = fs.existsSync(diaryPath) ? fs.statSync(diaryPath).mtime : ne
 						</div>
 					</section>
 				)}
+
+				<LatestPosts className="mt-12 !border-t-0" />
 
 			</div>
 		</main>
