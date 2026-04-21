@@ -131,6 +131,24 @@
     @apply bg-background text-foreground;
     font-family: "Atkinson", sans-serif;
   }
+  h1[id],
+  h2[id],
+  h3[id],
+  h4[id],
+  h5[id],
+  h6[id] {
+    scroll-margin-top: 7.5rem;
+  }
+  @media (max-width: 640px) {
+    h1[id],
+    h2[id],
+    h3[id],
+    h4[id],
+    h5[id],
+    h6[id] {
+      scroll-margin-top: 6.5rem;
+    }
+  }
 }
 
 :root {
