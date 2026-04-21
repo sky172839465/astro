@@ -79,4 +79,24 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 			}
 		});
 	}
+
+	const enableSmoothScroll = () => {
+		// Wait for one frame to ensure any initial anchor jumps have started/finished
+		requestAnimationFrame(() => {
+			document.documentElement.style.scrollBehavior = 'smooth';
+		});
+	};
+
+	// For standard page loads
+	if (document.readyState === 'complete') {
+		enableSmoothScroll();
+	} else {
+		window.addEventListener('load', enableSmoothScroll);
+	}
+
+	// For Astro View Transitions
+	document.addEventListener('astro:page-load', enableSmoothScroll);
+	document.addEventListener('astro:before-preparation', () => {
+		document.documentElement.style.scrollBehavior = 'auto';
+	});
 </script>
