@@ -8,9 +8,11 @@ import cloudflare from "@astrojs/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
+import pkg from "./package.json" with { type: "json" };
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: pkg.homepage,
   integrations: [mdx(), sitemap(), react()],
 
   adapter: cloudflare({
