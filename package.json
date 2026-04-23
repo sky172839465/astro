@@ -13,29 +13,17 @@
     "publish": true
   },
   "dependencies": {
-<<<<<<< HEAD
     "@astrojs/check": "^0.9.8",
     "@astrojs/cloudflare": "^13.2.0",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/react": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
-=======
-    "@astrojs/cloudflare": "13.2.0",
-    "@astrojs/mdx": "5.0.4",
-    "@astrojs/react": "^5.0.3",
-    "@astrojs/rss": "4.0.14",
-    "@astrojs/sitemap": "3.6.1",
->>>>>>> origin/main
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-<<<<<<< HEAD
     "astro": "^6.1.9",
-=======
-    "astro": "6.1.9",
->>>>>>> origin/main
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "jotai": "^2.19.1",
@@ -50,11 +38,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-<<<<<<< HEAD
     "wrangler": "^4.84.1"
-=======
-    "wrangler": "4.84.1"
->>>>>>> origin/main
   },
   "engines": {
     "node": ">=22"
