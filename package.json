@@ -3,7 +3,7 @@
   "homepage": "https://yusong.dev",
   "description": "Build a personal website, blog, or portfolio with Astro.",
   "cloudflare": {
-    "label": "Astro Framework Starter",
+    "label": "Astro yusong.dev",
     "products": [
       "Workers"
     ],
