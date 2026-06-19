@@ -23,7 +23,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.3.2",
+    "astro": "^6.4.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "jotai": "^2.19.1",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "wrangler": "^4.95.0"
+    "wrangler": "^4.103.0"
   },
   "engines": {
     "node": ">=22"
