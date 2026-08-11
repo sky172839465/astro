@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "wrangler": "^4.114.0"
+    "wrangler": "^4.120.1"
   },
   "engines": {
     "node": ">=22"
